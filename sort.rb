@@ -43,7 +43,7 @@ module Sort
     def gnome_sort(a)
       i, j = 0, 0
       s = a.size - 1
-      while i < s do
+      while i < s
         if a[i] <= a[i + 1]
           j = j + 1
           i = j
@@ -65,7 +65,7 @@ module Sort
         if a[i] < a[i - 1]
           t = a[i]
           j = i
-          while j > 0 && a[j - 1] > t do
+          while j > 0 && a[j - 1] > t
             a[j] = a[j- 1]
             j = j - 1
           end
