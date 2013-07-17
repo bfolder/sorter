@@ -41,7 +41,6 @@ module Sort
     def gnome_sort(a)
       i, j = 0, 0
       s = a.size - 1
-      
       while i < s do
         if a[i] <= a[i + 1]
           j = j + 1
@@ -94,14 +93,13 @@ module Sort
   private
     def partition(a, l, r)
       i, j = l, (r - 1)
-      pvt = a[r] 
+      pvt = a[r]      
       begin 
         i = i + 1 while a[i] <= pvt && i < r     
         j = j - 1 while a[j] >= pvt && j > l
 
         swap(a, i, j) if i < j  
       end while i < j 
-
       swap(a, i, r) if a[i] > pvt
       
       i
@@ -111,7 +109,7 @@ module Sort
       a[i], a[j] = a[j], a[i]
     end
   end
-  
+
   # Static module methods
   def self.bubble_sort(array)
     Sorter.new.bubble_sort(array)
