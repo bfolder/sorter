@@ -77,20 +77,8 @@ module Sort
     # Heap sort
     # Params:
     # +a+:: array to sort
-    def insertion_sort(a)
-      1.upto(a.size - 1) do |i|
-        if a[i] < a[i - 1]
-          t = a[i]
-          j = i
-          while j > 0 && a[j - 1] > t do
-            a[j] = a[j- 1]
-            j = j - 1
-          end
-          a[j] = t
-	      end	  
-      end
+    def heap_sort(a)
       
-      a
     end
     
   private
