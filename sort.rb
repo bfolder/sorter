@@ -11,7 +11,7 @@ module Sort
           if a[i] > a[i + 1]
             swap(a, i, i + 1)
             m = i + 1
-  	      end	  
+	  end	  
         end
         n = m
       end while n > 1
