@@ -21,6 +21,8 @@ module Sort
     
     # Quick sort
     # Left & right can be 0 & a.size - 1
+    # Keep in mind that this should be the default algorithm
+    # for the classic Array::sort (as far as I know)
     # Params:
     # +a+:: array to sort
     # +l+:: index of first object
