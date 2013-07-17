@@ -4,11 +4,11 @@ This is a tiny little Ruby class that implements several common sorting algorith
 
 Use it e.g. like that:
 
-	`Sort.bubble_sort([5,2,5,65,10,4,2,8,2,3,1])`
+	Sort.bubble_sort([5,2,5,65,10,4,2,8,2,3,1])
 
 or create an instance:
 
-	`Sort::Sorter.new.bubble_sort([5,2,5,65,10,4,2,8,2,3,1])`
+	Sort::Sorter.new.bubble_sort([5,2,5,65,10,4,2,8,2,3,1])
 
 
 ---
