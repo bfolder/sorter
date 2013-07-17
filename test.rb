@@ -23,6 +23,6 @@ class TestCaseSorter < Test::Unit::TestCase
   end
   
   def test_merge_sort
-      assert_equal(Sort.heap_sort([5,2,5,65,10,4,2,8,2,3,1]), [1,2,2,2,3,4,5,5,8,10,65])
+      assert_equal(Sort.merge_sort([5,2,5,65,10,4,2,8,2,3,1]), [1,2,2,2,3,4,5,5,8,10,65])
   end
 end

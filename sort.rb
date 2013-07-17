@@ -88,11 +88,26 @@ module Sort
     # Params:
     # +a+:: array to sort
     def merge_sort(a)
-      
-      a
+      return a if a.size <= 1 
+      m = a.size / 2
+      l = merge_sort(a[0, m])
+      r = merge_sort(a[m, a.size - m])
+      merge(l, r)
     end
     
   private
+    def merge(l, r)
+      s = Array.new
+      while l.size > 0 && r.size > 0
+        if l.first <= r.first
+          s << l.shift
+        else
+          s << r.shift
+        end
+      end
+      s.concat(l).concat(r)
+    end
+  
     def partition(a, l, r)
       i, j = l, (r - 1)
       pvt = a[r]      
