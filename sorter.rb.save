@@ -1,0 +1,21 @@
+module Sorter
+  def self.bubblesort(array)
+    n = array.size
+    begin 
+      m = 1
+      0.upto(n - 2) do |i|
+        if array[i] > array[i+1]
+	  array[i], array[i+1] = array[i+1], array[i]
+          m = i+1
+	end	  
+      end
+      n = m
+    end while n > 1
+    array
+  end
+
+  def self.quicksort(array)
+    
+    array    	    
+  end
+end
