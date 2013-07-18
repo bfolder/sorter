@@ -152,27 +152,29 @@ module Sort
   end
 
   # Static module methods
-  def self.bubble_sort(array)
-    Sorter.new.bubble_sort(array)
-  end
-  
-  def self.quick_sort(array)
-    Sorter.new.quick_sort(array, 0, array.size - 1) 	    
-  end
-  
-  def self.gnome_sort(array)
-    Sorter.new.gnome_sort(array)
-  end
-  
-  def self.insertion_sort(array)
-    Sorter.new.insertion_sort(array)
-  end
-  
-  def self.heap_sort(array)
-    Sorter.new.heap_sort(array)
-  end
-  
-  def self.merge_sort(array)
-    Sorter.new.merge_sort(array)
+  class << self
+    def bubble_sort(array)
+      Sorter.new.bubble_sort(array)
+    end
+
+    def quick_sort(array)
+      Sorter.new.quick_sort(array, 0, array.size - 1)
+    end
+
+    def gnome_sort(array)
+      Sorter.new.gnome_sort(array)
+    end
+
+    def insertion_sort(array)
+      Sorter.new.insertion_sort(array)
+    end
+
+    def heap_sort(array)
+      Sorter.new.heap_sort(array)
+    end
+
+    def merge_sort(array)
+      Sorter.new.merge_sort(array)
+    end
   end
 end
