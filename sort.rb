@@ -79,9 +79,19 @@ module Sort
     # Heap sort
     # Params:
     # +a+:: array to sort
-    def heap_sort(a)
+    def heap_sort(a)  
+      n = a.size  
+      a = [nil] + a
+      (n / 2).downto(1) do |i|  
+        down_heap(a, i, n)  
+      end  
+      while n > 1  
+        a[1], a[n] = a[n], a[1]  
+        n -= 1  
+        down_heap(a, 1, n)  
+      end  
       
-      a
+      a.drop(1)
     end
     
     # Merge sort
@@ -92,20 +102,13 @@ module Sort
       m = a.size / 2
       l = merge_sort(a[0, m])
       r = merge_sort(a[m, a.size - m])
+      
       merge(l, r)
     end
     
-  private
-    def merge(l, r)
-      s = Array.new
-      while l.size > 0 && r.size > 0
-        if l.first <= r.first
-          s << l.shift
-        else
-          s << r.shift
-        end
-      end
-      s.concat(l).concat(r)
+  private    
+    def swap(a, i, j)
+      a[i], a[j] = a[j], a[i]
     end
   
     def partition(a, l, r)
@@ -122,8 +125,29 @@ module Sort
       i
     end
     
-    def swap(a, i, j)
-      a[i], a[j] = a[j], a[i]
+    def down_heap(a, p, l)  
+      wk = a[p]  
+      while (c = 2 * p) <= l  
+        c += 1  if c < l and a[c] < a[c + 1]  
+        break  if wk >= a[c]  
+        a[p] = a[c]  
+        p = c  
+      end  
+      
+      a[p] = wk  
+    end
+  
+    def merge(l, r)
+      s = Array.new
+      while l.size > 0 && r.size > 0
+        if l.first <= r.first
+          s << l.shift
+        else
+          s << r.shift
+        end
+      end
+      
+      s.concat(l).concat(r)
     end
   end
 
