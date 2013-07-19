@@ -128,7 +128,7 @@ module Sort
     def down_heap(a, p, l)  
       wk = a[p]  
       while (c = 2 * p) <= l  
-        c += 1  if c < l and a[c] < a[c + 1]  
+        c += 1  if c < l && a[c] < a[c + 1]
         break  if wk >= a[c]  
         a[p] = a[c]  
         p = c  
